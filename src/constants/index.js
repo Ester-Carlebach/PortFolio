@@ -1,8 +1,9 @@
 const navLinks = [
   {
-    name: "Work",
-    link: "#work",
+    name: "About",
+    link: "#about",
   },
+
   {
     name: "Experience",
     link: "#experience",
@@ -12,8 +13,8 @@ const navLinks = [
     link: "#skills",
   },
   {
-    name: "Testimonials",
-    link: "#testimonials",
+    name: "Contact me",
+    link: "#contact",
   },
 ];
 
@@ -111,7 +112,28 @@ const techStackImgs = [
     imgPath: "/images/logos/git.svg",
   },
 ];
-
+export const skillCategories = [
+  {
+    title: "Backend",
+    skills: ["C#", ".NET Core", "ASP.NET Core", "Node.js", "Java", "Python"],
+  },
+  {
+    title: "Frontend",
+    skills: ["Angular", "React", "TypeScript", "JavaScript", "HTML5", "CSS3"],
+  },
+  {
+    title: "Databases",
+    skills: ["PostgreSQL", "SQL Server", "MySQL", "MongoDB"],
+  },
+  {
+    title: "DevOps & Tools",
+    skills: ["Git", "GitHub Actions", "AWS", "CI/CD", "Jira", "Agile"],
+  },
+  {
+    title: "AI Assisted Dev",
+    skills: ["Claude", "GPT-4", "Gemini", "Copilot"],
+  },
+];
 const techStackIcons = [
   {
     name: "React Developer",
@@ -145,105 +167,37 @@ const techStackIcons = [
   },
 ];
 
-const expCards = [
+ const expCards = [
   {
-    review: "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    title: "Full Stack Developer | BSD",
+    date: "2025 - Present",
+    subTitle: "ERP System for Bookkeeping & Tax Firms (Freelance)",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Architected and developed a robust office management system using .NET Core and C# following Clean Architecture principles.",
+      "Built a high-performance, responsive frontend with Angular, ensuring a seamless user experience.",
+      "Designed and optimized complex database schemas, queries, and procedures using PostgreSQL.",
+      "Implemented advanced Design Patterns including Dependency Injection (DI), Mediator, and CQRS for scalable and maintainable code.",
+      "Engineered a comprehensive security layer featuring OAuth (Google), JWT-based authorization, and Bcrypt encryption.",
+      "Developed automated reporting mechanisms and background tasks using Hangfire to streamline business operations.",
+      "Led end-to-end feature development, from initial characterization to cloud deployment and technical decision-making."
     ],
+
   },
   {
-    review: "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    title: "Full Stack Developer | Bpreven",
+    date: "2025",
+    subTitle: "AI-Driven Medical Information System (Practicum)",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Developed and integrated RESTful APIs using .NET Core and C# with SQL Server as the primary data store.",
+      "Engineered a dynamic client-side interface using React and TypeScript, focusing on robust error handling and optimized loading states.",
+      "Integrated OpenAI API to generate automated medical reports via data-driven dynamic prompting, significantly reducing manual workload.",
+      "Built a custom Content Management System (CMS) for administrators, empowering non-technical staff to manage platform content independently.",
+      "Collaborated within an Agile team environment, utilizing Git for version control and ensuring high code quality through rigorous debugging."
     ],
-  },
-  {
-    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
-    responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
-    ],
-  },
-];
+        logoPath: "images/logos/bpreven.png", 
 
-const expLogos = [
-  {
-    name: "logo1",
-    imgPath: "/images/logo1.png",
-  },
-  {
-    name: "logo2",
-    imgPath: "/images/logo2.png",
-  },
-  {
-    name: "logo3",
-    imgPath: "/images/logo3.png",
-  },
+  }
 ];
-
-const testimonials = [
-  {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
-    review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
-  },
-  {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
-    review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
-  },
-  {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
-    review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    imgPath: "/images/client2.png",
-  },
-  {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
-    review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
-  },
-  {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
-    review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
-  },
-  {
-    name: "Albert Flores",
-    mentions: "@albertflores",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
-  },
-];
-
 const socialImgs = [
   {
     name: "insta",
@@ -269,8 +223,6 @@ export {
   logoIconsList,
   counterItems,
   expCards,
-  expLogos,
-  testimonials,
   socialImgs,
   techStackIcons,
   techStackImgs,

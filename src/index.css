@@ -1,24 +1,42 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
-
-:root {
-  --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
-}
 
 html,
 body {
   width: 100dvw;
   overflow-x: hidden;
-  background-color: black;
+  background-color: #030303; /* שחור עמוק מאוד */
   color: white;
   scroll-behavior: smooth;
   font-family: "Mona Sans", sans-serif;
+  position: relative;
+}
+
+html::before,
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 40%), /* כחול */
+    radial-gradient(circle at 90% 80%, rgba(147, 51, 234, 0.08) 0%, transparent 40%), /* סגול */
+    radial-gradient(ellipse at 50% -10%, rgba(130, 90, 255, 0.1) 0%, transparent 50%); /* הילה עליונה */
+  pointer-events: none;
+  z-index: 0;
 }
 
 section {
+  scroll-margin-top: 100px;
   width: 100dvw;
+  position: relative;
+  z-index: 2;
+  /* הסרת רקעים כהים כדי לתת לרקע הכללי לזרוח דרך */
+  background: transparent !important;
 }
-
 @theme {
   --font-sans: "Mona Sans", sans-serif;
   --color-white-50: #d9ecff;
@@ -83,7 +101,9 @@ section {
   .hero-layout {
     @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
   }
-
+.profile{
+  font-size: 40px;
+}
   .hero-text {
     @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
     img {
@@ -116,11 +136,64 @@ section {
     .inner {
       @apply mx-auto flex items-center justify-between;
     }
+.logo-wrapper{
+    @apply flex items-center gap-3;
+
+}
+.cv-shimmer-btn {
+  @apply relative flex items-center gap-3 px-10 py-5
+         rounded-2xl text-white font-semibold
+         overflow-hidden
+         transition-all duration-300 hover:scale-105;
+
+  /* gradient יוקרתי */
+  background: linear-gradient(
+    135deg,
+    #0a0f2c 0%,
+    #16205a 40%,
+    #4c1d95 100%
+  );
+
+  /* glow רך ומקצועי */
+  box-shadow:
+    0 10px 30px rgba(59, 130, 246, 0.25),
+    0 0 40px rgba(168, 85, 247, 0.25);
+}
+
+/* hover glow */
+.cv-shimmer-btn:hover {
+  box-shadow:
+    0 15px 40px rgba(59, 130, 246, 0.45),
+    0 0 60px rgba(168, 85, 247, 0.4);
+}
+
+/* shimmer אלגנטי */
+.cv-shimmer-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-20deg);
+}
+
+.cv-shimmer-btn:hover::before {
+  animation: shimmer 1.2s ease-out;
+}
 
     .logo {
       @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
     }
-
+.logogif{
+  border-radius:60% ;
+  height: 3rem;
+  width: 3rem;
+  margin: 0;
+}
     nav.desktop {
       @apply hidden lg:flex items-center;
 
@@ -206,14 +279,13 @@ section {
     @apply relative z-20 cursor-pointer;
   }
 
-  .cta-button {
-    @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
 
-    .bg-circle {
-      @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 
-        w-[120%] h-[120%] group-hover:size-10 group-hover:right-10
-        rounded-full bg-white-50 transition-all duration-500;
-    }
+@supports (-webkit-mask-composite: source-in) {
+  .mask-composite-exclude {
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+}
 
     .text {
       @apply uppercase md:text-lg text-black transition-all duration-500
@@ -320,7 +392,7 @@ section {
       }
     }
   }
-}
+
 
 /* Hero text slider starts */
 .slide {

@@ -10,6 +10,8 @@ const Contact = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    company: "",
+    phone: "",
     message: "",
   });
 
@@ -20,22 +22,32 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading state
+    setLoading(true);
 
     try {
-      await emailjs.sendForm(
+      // שולח את כל הערכים ל-EmailJS
+      await emailjs.send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        formRef.current,
+        {
+          from_name: form.name,
+          reply_to: form.email,
+          phone: form.phone,
+          message: form.message,
+        },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
-      // Reset form and stop loading
-      setForm({ name: "", email: "", message: "" });
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      console.error("EmailJS Error:", error);
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
     }
   };
 
@@ -44,7 +56,7 @@ const Contact = () => {
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
           title="Get in Touch – Let’s Connect"
-          sub="💬 Have questions or ideas? Let’s talk! 🚀"
+          sub="Have questions or ideas? Let’s talk!"
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
@@ -55,7 +67,7 @@ const Contact = () => {
                 className="w-full flex flex-col gap-7"
               >
                 <div>
-                  <label htmlFor="name">Your name</label>
+                  <label htmlFor="name">Your Name</label>
                   <input
                     type="text"
                     id="name"
@@ -81,6 +93,20 @@ const Contact = () => {
                 </div>
 
                 <div>
+                  <label htmlFor="phone">Phone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder="Your phone number (optional)"
+                  />
+                </div>
+
+              
+
+                <div>
                   <label htmlFor="message">Your Message</label>
                   <textarea
                     id="message"
@@ -93,24 +119,22 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit">
-                  <div className="cta-button group">
-                    <div className="bg-circle" />
-                    <p className="text">
-                      {loading ? "Sending..." : "Send Message"}
-                    </p>
-                    <div className="arrow-wrapper">
-                      <img src="/images/arrow-down.svg" alt="arrow" />
-                    </div>
-                  </div>
-                </button>
+<button 
+  type="submit" 
+  className="relative group px-10 py-4 rounded-xl flex items-center justify-center gap-3 !bg-transparent overflow-visible border-none outline-none"
+>
+<span className="absolute inset-0 rounded-xl border-2 border-solid border-transparent bg-clip-border [background:linear-gradient(to_right,#3b82f6,#9333ea)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [mask-composite:exclude] -z-10 group-hover:rotate-3 transition-all duration-500"></span>  
+  <p className="relative z-10 text-white font-medium group-hover:text-purple-400 transition-colors">
+    {loading ? "Sending..." : "Send Message"}
+  </p>
+  <div className="relative z-10 group-hover:translate-x-1 transition-transform">
+    <img src="/images/arrow-down.svg" alt="arrow" className="-rotate-90 w-4 h-4 brightness-200" />
+  </div> 
+</button>
               </form>
             </div>
           </div>
           <div className="xl:col-span-7 min-h-96">
-            <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
-              <ContactExperience />
-            </div>
           </div>
         </div>
       </div>

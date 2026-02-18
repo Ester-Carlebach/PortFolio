@@ -25,9 +25,13 @@ const NavBar = () => {
   return (
     <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner">
-        <a href="#hero" className="logo">
-          Adrian JSM
-        </a>
+<div className="logo-wrapper">
+  <img src="/images/gif.gif" alt="logo" className="logogif" />
+  <a href="#hero" className="logo">
+    Ester Carlebach
+  </a>
+</div>
+
 
         <nav className="desktop">
           <ul>
@@ -42,11 +46,7 @@ const NavBar = () => {
           </ul>
         </nav>
 
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact me</span>
-          </div>
-        </a>
+     
       </div>
     </header>
   );

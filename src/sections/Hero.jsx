@@ -1,79 +1,42 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import React from "react";
 
-import AnimatedCounter from "../components/AnimatedCounter";
-import Button from "../components/Button";
-import { words } from "../constants";
-import HeroExperience from "../components/models/hero_models/HeroExperience";
-
-const Hero = () => {
-  useGSAP(() => {
-    gsap.fromTo(
-      ".hero-text h1",
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
-    );
-  });
-
+const HeroSection = () => {
   return (
-    <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="" />
+    <section className="relative bg-transparent text-white px-6 py-20 lg:py-32">
+      <div className="relative max-w-4xl mx-auto text-center">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+          Hi, I'm{" "}
+          <span className="text-purple-500">Ester Carlebach</span>
+        </h1>
+        <p className="mt-4 text-xl sm:text-2xl text-gray-200">
+          Full-stack Developer with a passion for technology and high-level logical reasoning.
+        </p>
+        <p className="mt-6 text-gray-400 max-w-3xl mx-auto text-base sm:text-lg">
+          A Software Engineering honors graduate with a sharp analytical mindset and a deep passion for solving complex logical challenges. As a fast-learning autodidact, I have a proven track record of quickly mastering legacy codebases and seamlessly integrating into development teams.
+        </p>
       </div>
 
-      <div className="hero-layout">
-        {/* LEFT: Hero Content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-          <div className="flex flex-col gap-7">
-            <div className="hero-text">
-              <h1>
-                Shaping
-                <span className="slide">
-                  <span className="wrapper">
-                    {words.map((word, index) => (
-                      <span
-                        key={index}
-                        className="flex items-center md:gap-3 gap-1 pb-2"
-                      >
-                        <img
-                          src={word.imgPath}
-                          alt="person"
-                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                        />
-                        <span>{word.text}</span>
-                      </span>
-                    ))}
-                  </span>
-                </span>
-              </h1>
-              <h1>into Real Projects</h1>
-              <h1>that Deliver Results</h1>
-            </div>
+      <div className="w-full flex justify-center mt-20 gap-4">
+        <a
+          href="/Ester Carlebach-FullStack Developer.pdf"
+          download
+          className="relative flex items-center gap-3 px-12 py-5 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-105 overflow-hidden group shadow-lg shadow-purple-500/20"
+          style={{ background: "linear-gradient(135deg, #0b1026 0%, #1e1b4b 40%, #6d28d9 100%)" }}
+        >
+          <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-transform duration-700 bg-[linear-gradient(120deg,transparent_30%,rgba(255,255,255,0.2),transparent_70%)] -translate-x-full group-hover:translate-x-full" />
+          <span className="z-10">Download Resume</span>
+        </a>
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Adrian, a developer based in Croatia with a passion for
-              code.
-            </p>
-
-            <Button
-              text="See My Work"
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="counter"
-            />
-          </div>
-        </header>
-
-        {/* RIGHT: 3D Model or Visual */}
-        <figure>
-          <div className="hero-3d-layout">
-            <HeroExperience />
-          </div>
-        </figure>
+        <a 
+          href="#contact"
+          className="relative flex items-center gap-3 px-12 py-5 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-105 overflow-hidden group shadow-lg shadow-blue-500/20"
+          style={{ background: "linear-gradient(135deg, #0b1026 0%, #1e1b4b 40%, #6d28d9 100%)" }}
+        >
+          <span className="z-10">Contact me</span>
+        </a>
       </div>
-
-      <AnimatedCounter />
     </section>
   );
 };
 
-export default Hero;
+export default HeroSection;

@@ -3,7 +3,10 @@ const navLinks = [
     name: "About",
     link: "#about",
   },
-
+  {
+    name: "My Resume",
+    link: "/Ester Carlebach-FullStack Developer.pdf",
+  },
   {
     name: "Experience",
     link: "#experience",
@@ -16,6 +19,7 @@ const navLinks = [
     name: "Contact me",
     link: "#contact",
   },
+
 ];
 
 const words = [

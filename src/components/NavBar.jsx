@@ -17,6 +17,7 @@ const getNavLinksConfig = (lang) => [
 const NavBar = () => {
   const { t, i18n } = useTranslation('navigation');
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +58,65 @@ const NavBar = () => {
             </>
           )}
         </div>
+
+        <button
+          className="lg:hidden flex flex-col gap-1.5 z-50"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={`w-6 h-0.5 bg-white transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-white transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-white transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
+
+        <nav className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+          <ul>
+            {getNavLinksConfig(i18n.language).map(({ link, key }) => {
+              const isResume = link.toLowerCase().endsWith('.pdf');
+              return (
+                <li key={key}>
+                  <a
+                    href={link}
+                    target={isResume ? "_blank" : "_self"}
+                    rel={isResume ? "noopener noreferrer" : undefined}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t(key)}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="flex items-center justify-center gap-2 mt-6">
+            <button
+              onClick={() => {
+                switchLanguage('en');
+                setMobileMenuOpen(false);
+              }}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                i18n.language === 'en'
+                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'
+                  : 'text-gray-400 bg-gray-800/50'
+              }`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => {
+                switchLanguage('he');
+                setMobileMenuOpen(false);
+              }}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                i18n.language === 'he'
+                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'
+                  : 'text-gray-400 bg-gray-800/50'
+              }`}
+            >
+              עב
+            </button>
+          </div>
+        </nav>
 
         <nav className="desktop">
           <ul>

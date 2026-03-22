@@ -1,6 +1,8 @@
 {
   "footer": {
-    "copyright": "© {{year}} Ester Carlebach All rights reserved."
+    "copyright": "© {{year}} Ester Carlebach All rights reserved.",
+    "email": "Email",
+    "phone": "Phone"
   },
   "words": {
     "ideas": "Ideas",

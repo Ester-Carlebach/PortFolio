@@ -2,6 +2,10 @@
   "title": "צרו קשר – בואו נתחבר",
   "subtitle": "יש לכם שאלות או רעיונות? בואו נדבר!",
   "form": {
+    "contactInfo": {
+      "email": "אימייל",
+      "phone": "טלפון"
+    },
     "nameLabel": "השם שלך",
     "namePlaceholder": "מה השם שלך?",
     "emailLabel": "האימייל שלך",
@@ -11,6 +15,15 @@
     "messageLabel": "ההודעה שלך",
     "messagePlaceholder": "איך אוכל לעזור לך?",
     "submitButton": "שלח הודעה",
-    "submitting": "שולח..."
+    "submitting": "שולח...",
+    "successMessage": "✓ ההודעה נשלחה בהצלחה! אחזור אליך בקרוב.",
+    "errorMessage": "✗ שליחת ההודעה נכשלה. אנא נסה שוב או צור איתי קשר ישירות.",
+    "errors": {
+      "nameRequired": "יש למלא שם",
+      "emailRequired": "יש למלא אימייל",
+      "emailInvalid": "נא להזין כתובת אימייל תקינה",
+      "phoneInvalid": "נא להזין מספר טלפון תקין",
+      "messageRequired": "יש למלא הודעה"
+    }
   }
 }

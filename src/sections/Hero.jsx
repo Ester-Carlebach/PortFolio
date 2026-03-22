@@ -19,11 +19,11 @@ const HeroSection = () => {
         </p>
       </div>
 
-      <div className="w-full flex justify-center mt-20 gap-4">
+      <div className="w-full flex flex-col sm:flex-row justify-center items-center mt-12 sm:mt-20 gap-4 px-4">
         <a
           href="/Ester Carlebach-FullStack Developer.pdf"
           download
-          className="relative flex items-center gap-3 px-12 py-5 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-105 overflow-hidden group shadow-lg shadow-purple-500/20"
+          className="relative flex items-center gap-3 px-8 sm:px-12 py-4 sm:py-5 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-105 overflow-hidden group shadow-lg shadow-purple-500/20 w-full sm:w-auto text-center justify-center"
           style={{ background: "linear-gradient(135deg, #0b1026 0%, #1e1b4b 40%, #6d28d9 100%)" }}
         >
           <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-transform duration-700 bg-[linear-gradient(120deg,transparent_30%,rgba(255,255,255,0.2),transparent_70%)] -translate-x-full group-hover:translate-x-full" />
@@ -32,7 +32,7 @@ const HeroSection = () => {
 
         <a
           href="#contact"
-          className="relative flex items-center gap-3 px-12 py-5 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-105 overflow-hidden group shadow-lg shadow-blue-500/20"
+          className="relative flex items-center gap-3 px-8 sm:px-12 py-4 sm:py-5 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-105 overflow-hidden group shadow-lg shadow-blue-500/20 w-full sm:w-auto text-center justify-center"
           style={{ background: "linear-gradient(135deg, #0b1026 0%, #1e1b4b 40%, #6d28d9 100%)" }}
         >
           <span className="z-10">{t('contactMe')}</span>

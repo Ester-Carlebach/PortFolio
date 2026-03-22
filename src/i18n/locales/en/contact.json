@@ -2,6 +2,10 @@
   "title": "Get in Touch – Let's Connect",
   "subtitle": "Have questions or ideas? Let's talk!",
   "form": {
+    "contactInfo": {
+      "email": "Email",
+      "phone": "Phone"
+    },
     "nameLabel": "Your Name",
     "namePlaceholder": "What's your good name?",
     "emailLabel": "Your Email",
@@ -11,6 +15,15 @@
     "messageLabel": "Your Message",
     "messagePlaceholder": "How can I help you?",
     "submitButton": "Send Message",
-    "submitting": "Sending..."
+    "submitting": "Sending...",
+    "successMessage": "✓ Message sent successfully! I'll get back to you soon.",
+    "errorMessage": "✗ Failed to send message. Please try again or contact me directly.",
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneInvalid": "Please enter a valid phone number",
+      "messageRequired": "Message is required"
+    }
   }
 }

@@ -5,10 +5,11 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-
-          <p className="text-center md:text-center text-gray-500 text-sm">
-            {t('footer.copyright', { year: new Date().getFullYear() })}
-          </p>
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <p className="text-center text-gray-500 text-sm">
+          {t('footer.copyright', { year: new Date().getFullYear() })}
+        </p>
+      </div>
     </footer>
   );
 };

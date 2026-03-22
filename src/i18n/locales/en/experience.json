@@ -1,0 +1,30 @@
+{
+  "title": "Professional Experience",
+  "subtitle": "My Technical Journey",
+  "bsd": {
+    "title": "Full Stack Developer | BSD",
+    "date": "2025 - Present",
+    "subTitle": "ERP System for Bookkeeping & Tax Firms (Freelance)",
+    "responsibilities": [
+      "Architected and developed a robust office management system using .NET Core and C# following Clean Architecture principles.",
+      "Built a high-performance, responsive frontend with Angular, ensuring a seamless user experience.",
+      "Designed and optimized complex database schemas, queries, and procedures using PostgreSQL.",
+      "Implemented advanced Design Patterns including Dependency Injection (DI), Mediator, and CQRS for scalable and maintainable code.",
+      "Engineered a comprehensive security layer featuring OAuth (Google), JWT-based authorization, and Bcrypt encryption.",
+      "Developed automated reporting mechanisms and background tasks using Hangfire to streamline business operations.",
+      "Led end-to-end feature development, from initial characterization to cloud deployment and technical decision-making."
+    ]
+  },
+  "bpreven": {
+    "title": "Full Stack Developer | Bpreven",
+    "date": "2025",
+    "subTitle": "AI-Driven Medical Information System (Practicum)",
+    "responsibilities": [
+      "Developed and integrated RESTful APIs using .NET Core and C# with SQL Server as the primary data store.",
+      "Engineered a dynamic client-side interface using React and TypeScript, focusing on robust error handling and optimized loading states.",
+      "Integrated OpenAI API to generate automated medical reports via data-driven dynamic prompting, significantly reducing manual workload.",
+      "Built a custom Content Management System (CMS) for administrators, empowering non-technical staff to manage platform content independently.",
+      "Collaborated within an Agile team environment, utilizing Git for version control and ensuring high code quality through rigorous debugging."
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Technical Toolkit",
+  "subtitle": "A comprehensive overview of the languages, frameworks, and tools I use to bring complex ideas to life.",
+  "categories": {
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "databases": "Databases",
+    "devops": "DevOps & Tools",
+    "ai": "AI Assisted Dev"
+  }
+}

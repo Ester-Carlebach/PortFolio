@@ -1,0 +1,12 @@
+{
+  "ryde": {
+    "title": "On-Demand Rides Made Simple with a Powerful, User-Friendly App called Ryde",
+    "description": "An app built with React Native, Expo, & TailwindCSS for a fast, user-friendly experience."
+  },
+  "library": {
+    "title": "The Library Management Platform"
+  },
+  "yc": {
+    "title": "YC Directory - A Startup Showcase App"
+  }
+}

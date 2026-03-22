@@ -1,0 +1,16 @@
+{
+  "title": "צרו קשר – בואו נתחבר",
+  "subtitle": "יש לכם שאלות או רעיונות? בואו נדבר!",
+  "form": {
+    "nameLabel": "השם שלך",
+    "namePlaceholder": "מה השם שלך?",
+    "emailLabel": "האימייל שלך",
+    "emailPlaceholder": "מה כתובת האימייל שלך?",
+    "phoneLabel": "טלפון",
+    "phonePlaceholder": "מספר הטלפון שלך (אופציונלי)",
+    "messageLabel": "ההודעה שלך",
+    "messagePlaceholder": "איך אוכל לעזור לך?",
+    "submitButton": "שלח הודעה",
+    "submitting": "שולח..."
+  }
+}

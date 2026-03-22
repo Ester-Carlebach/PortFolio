@@ -1,15 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { skillCategories } from "../constants";
 import TitleHeader from '../components/TitleHeader';
 
 const Skills = () => {
+  const { t } = useTranslation('skills');
+
   return (
     <section id="skills" className="py-20 bg-transparent">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <TitleHeader
-            title="Technical Toolkit"
-            sub="A comprehensive overview of the languages, frameworks, and tools I use to bring complex ideas to life."
+            title={t('title')}
+            sub={t('subtitle')}
           />
         </div>
 
@@ -21,7 +24,7 @@ const Skills = () => {
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center">
                 <span className="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:shadow-[0_0_8px_#a855f7]"></span>
-                {category.title}
+                {t(`categories.${category.title.toLowerCase().replace(/ & /g, '').replace(/ /g, '')}`)}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, idx) => (

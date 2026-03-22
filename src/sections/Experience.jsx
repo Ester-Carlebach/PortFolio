@@ -1,12 +1,30 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { expCards } from "../constants";
+import { useTranslation } from "react-i18next";
 import TitleHeader from "../components/TitleHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
+  const { t } = useTranslation('experience');
+
+  const expCards = [
+    {
+      title: t('bsd.title'),
+      date: t('bsd.date'),
+      subTitle: t('bsd.subTitle'),
+      responsibilities: t('bsd.responsibilities', { returnObjects: true }),
+    },
+    {
+      title: t('bpreven.title'),
+      date: t('bpreven.date'),
+      subTitle: t('bpreven.subTitle'),
+      responsibilities: t('bpreven.responsibilities', { returnObjects: true }),
+      logoPath: "images/logos/bpreven.png",
+    }
+  ];
+
   useGSAP(() => {
     gsap.utils.toArray(".exp-card-wrapper").forEach((card) => {
       gsap.from(card, {
@@ -28,7 +46,7 @@ const Experience = () => {
   return (
     <section id="experience" className="section-padding xl:px-0 bg-transparent">
       <div className="w-full max-w-7xl mx-auto">
-        <TitleHeader title="Professional Experience" sub="My Technical Journey" />
+        <TitleHeader title={t('title')} sub={t('subtitle')} />
 
         <div className="mt-20 relative timeline-container">
           <div className="absolute left-4 md:left-1/2 top-0 h-full w-[2px] bg-gray-800 -translate-x-1/2">

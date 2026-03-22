@@ -1,10 +1,12 @@
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 
 import TitleHeader from "../components/TitleHeader";
 import ContactExperience from "../components/models/contact/ContactExperience";
 
 const Contact = () => {
+  const { t } = useTranslation('contact');
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
@@ -25,7 +27,6 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      // שולח את כל הערכים ל-EmailJS
       await emailjs.send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
@@ -55,8 +56,8 @@ const Contact = () => {
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
-          title="Get in Touch – Let’s Connect"
-          sub="Have questions or ideas? Let’s talk!"
+          title={t('title')}
+          sub={t('subtitle')}
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
@@ -67,69 +68,69 @@ const Contact = () => {
                 className="w-full flex flex-col gap-7"
               >
                 <div>
-                  <label htmlFor="name">Your Name</label>
+                  <label htmlFor="name">{t('form.nameLabel')}</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="What’s your good name?"
+                    placeholder={t('form.namePlaceholder')}
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email">Your Email</label>
+                  <label htmlFor="email">{t('form.emailLabel')}</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="What’s your email address?"
+                    placeholder={t('form.emailPlaceholder')}
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone">Phone</label>
+                  <label htmlFor="phone">{t('form.phoneLabel')}</label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
                     value={form.phone}
                     onChange={handleChange}
-                    placeholder="Your phone number (optional)"
+                    placeholder={t('form.phonePlaceholder')}
                   />
                 </div>
 
-              
+
 
                 <div>
-                  <label htmlFor="message">Your Message</label>
+                  <label htmlFor="message">{t('form.messageLabel')}</label>
                   <textarea
                     id="message"
                     name="message"
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="How can I help you?"
+                    placeholder={t('form.messagePlaceholder')}
                     rows="5"
                     required
                   />
                 </div>
 
-<button 
-  type="submit" 
+<button
+  type="submit"
   className="relative group px-10 py-4 rounded-xl flex items-center justify-center gap-3 !bg-transparent overflow-visible border-none outline-none"
 >
-<span className="absolute inset-0 rounded-xl border-2 border-solid border-transparent bg-clip-border [background:linear-gradient(to_right,#3b82f6,#9333ea)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [mask-composite:exclude] -z-10 group-hover:rotate-3 transition-all duration-500"></span>  
+<span className="absolute inset-0 rounded-xl border-2 border-solid border-transparent bg-clip-border [background:linear-gradient(to_right,#3b82f6,#9333ea)_border-box] [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [mask-composite:exclude] -z-10 group-hover:rotate-3 transition-all duration-500"></span>
   <p className="relative z-10 text-white font-medium group-hover:text-purple-400 transition-colors">
-    {loading ? "Sending..." : "Send Message"}
+    {loading ? t('form.submitting') : t('form.submitButton')}
   </p>
   <div className="relative z-10 group-hover:translate-x-1 transition-transform">
     <img src="/images/arrow-down.svg" alt="arrow" className="-rotate-90 w-4 h-4 brightness-200" />
-  </div> 
+  </div>
 </button>
               </form>
             </div>

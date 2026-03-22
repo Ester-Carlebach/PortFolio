@@ -1,0 +1,31 @@
+{
+  "footer": {
+    "copyright": "© {{year}} Ester Carlebach All rights reserved."
+  },
+  "words": {
+    "ideas": "Ideas",
+    "concepts": "Concepts",
+    "designs": "Designs",
+    "code": "Code"
+  },
+  "counterItems": {
+    "experience": "Years of Experience",
+    "clients": "Satisfied Clients",
+    "projects": "Completed Projects",
+    "retention": "Client Retention Rate"
+  },
+  "abilities": {
+    "quality": {
+      "title": "Quality Focus",
+      "description": "Delivering high-quality results while maintaining attention to every detail."
+    },
+    "communication": {
+      "title": "Reliable Communication",
+      "description": "Keeping you updated at every step to ensure transparency and clarity."
+    },
+    "delivery": {
+      "title": "On-Time Delivery",
+      "description": "Making sure projects are completed on schedule, with quality & attention to detail."
+    }
+  }
+}

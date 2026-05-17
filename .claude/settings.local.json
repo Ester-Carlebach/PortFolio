@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find 'c:\\\\Users\\\\This User\\\\Desktop\\\\חיפוש עבודה בסד\\\\Portfolio\\\\3d-portfolio' -name *i18n* -o -name *translation* -o -name *locale*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
